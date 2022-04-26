@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de Titulos</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/Style.css" />
+
+
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="www.cardassi.com.br"> <img src="/image/gr3.png" alt=""
+			width="30" height="24" class="d-inline-block align-text-top"> <B><i>
+					R.G.R </i></B><i> - SOLUÇÕES EM T.I.</i>
+		</a>
+	</nav>
+	<br>
+	<form class="form-horizontal" method="POST" action="/titulos">
+		
+		<div class="alert alert-success" role="alert" th:if="${!#strings.isEmpty(mensagem)}">
+		<span th:text="${mensagem}"></span>
+		</div>
+
+		
+		<div class="panel panel-default">
+		<div class="bg bg-dark p-2 bg-opacity-25">
+			<b>Novo Titulo</b>
+		</div>
+	</div>
+
+			<br>
+			<div class="row row-cols-1">
+				<div class="col">
+					<div class="row mb-4">
+						<label for="colFormLabelSm-2"
+							class="col-sm-2 col-form-label col-form-label-sm text-end">Descrição</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control form-control-sm"
+								id="colFormLabelSm" name="descricao">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-cols-1">
+				<div class="col">
+					<div class="row mb-4">
+						<label for="colFormLabelSm-2"
+							class="col-sm-2 col-form-label col-form-label-sm text-end">Data
+							de Vencimento</label>
+						<div class="col-sm-2">
+							<input type="date" class="form-control form-control-sm"
+								id="colFormLabelSm" name="dataVencimento">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-cols-1">
+				<div class="col">
+					<div class="row mb-4">
+						<label for="colFormLabelSm-2"
+							class="col-sm-2 col-form-label col-form-label-sm text-end">Valor</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control form-control-sm"
+								id="colFormLabelSm" name="valor">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-cols-1">
+				<div class="col">
+					<div class="row mb-4">
+						<label for="colFormLabelSm-2"
+							class="col-sm-2 col-form-label col-form-label-sm text-end">Status</label>
+						<div class="col-sm-1">
+							<select class="form-control form-control-sm" name="Status">
+								<option value='PENDENTE'>Pendente</option>
+								<option value='PENDENTE'>Recebido</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 offset-md-2">
+				<button type="submit" class="btn btn-outline-secondary">Salvar</button>
+			</div>
+
+	
+	</form>
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

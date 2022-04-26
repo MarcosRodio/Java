@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Pesquisa de Titulos</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/Style.css" />
+
+
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="www.cardassi.com.br"> <img
+			src="/image/gr3.png" alt="" width="30" height="24"
+			class="d-inline-block align-text-top"> <B><i> R.G.R </i></B><i>
+				- SOLUÇÕES EM T.I.</i>
+		</a>
+	</nav>
+	<br>
+
+	<div class="panel panel-bordered">
+		<div class="bg bg-dark p-2 bg-opacity-25">
+			<b>Pesquisa Título</b>
+		</div>
+	</div>
+<br>
+	<div class=panel-body>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th class="text-center col-md-1">#</th>
+					<th class="text-center col-md-3">Descrição</th>
+					<th class="text-center col-md-2">Data de Vencimento</th>
+					<th class="text-right col-md-2">Valor</th>
+					<th class="text-center col-md-2">Status</th>
+					<th class="col-md-1"></th>
+				</tr>
+			</thead>
+			<tbody>
+			
+			<tr th:each="titulo:${titulos}">
+			<td class="text-center" th:text="${titulo.codigo}">1</td>
+			<td class="text-center" th:text="${titulo.descricao}"></td>
+			<td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
+			<td class="text-right" th:text="|R$ ${{titulo.valor}}|"></td>
+			<td class="text-center" th:text="${titulo.status.descricao}"></td>
+			<td class="text-center"></td>
+			<tr>
+			<td colspan="6" th:if="${#lists.isEmpty(titulos)}">Nenhum Titulo Encontrado</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

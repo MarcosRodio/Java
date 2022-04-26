@@ -1,0 +1,2 @@
+module OO.ForEach {
+}

@@ -1,0 +1,36 @@
+package Aula3;
+
+public abstract class Veiculo {
+
+	private String modelo;
+
+	private String marca;
+	
+	protected Locomocao locomocao;
+
+	public void parar() {
+		System.out.println("Parar");
+
+	}
+	
+	public abstract void acelerar();;
+	
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	
+	public abstract void instanciarLocomocao();
+	
+}
